@@ -1,8 +1,8 @@
 
-let data = localStorage.getItem("tareas");
-let tareas = data ? JSON.parse(data) : [];
+let data: string | null = localStorage.getItem("tareas");
+let tareas: any[] = data ? JSON.parse(data) : [];
 
-tareas.forEach(t => {
+tareas.forEach((t: any) => {
 	const h2 = document.createElement("h2");
 	h2.textContent =
 		`Id: ${t.id} | ` +
