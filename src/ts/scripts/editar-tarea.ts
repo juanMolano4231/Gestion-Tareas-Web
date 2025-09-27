@@ -1,5 +1,5 @@
-import { Tarea } from "../models/Tarea";
-import type { EstadoTarea } from "../models/Tarea";
+import { Tarea } from "../models/Tarea.js";
+import type { EstadoTarea } from "../models/Tarea.js";
 
 let data: string | null = localStorage.getItem("tareaSeleccionada");
 let tarea: Tarea | null = null;

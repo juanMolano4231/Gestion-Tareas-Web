@@ -1,4 +1,4 @@
-import { Tarea } from "../models/Tarea";
+import { Tarea } from "../models/Tarea.js";
 
 let data: string | null = localStorage.getItem("tareas");
 let tareas: Tarea[] = data ? JSON.parse(data) : [];

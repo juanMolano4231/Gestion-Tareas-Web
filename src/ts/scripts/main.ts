@@ -1,4 +1,4 @@
-import { Tarea } from "../models/Tarea";
+import { Tarea } from "../models/Tarea.js";
 
 if (!localStorage.getItem("tareas")) {
 	const ejemplos: Tarea[] = [

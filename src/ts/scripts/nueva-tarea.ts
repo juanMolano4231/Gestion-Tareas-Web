@@ -1,5 +1,5 @@
-import { Tarea } from "../models/Tarea";
-import type { EstadoTarea } from "../models/Tarea";
+import { Tarea } from "../models/Tarea.js";
+import type { EstadoTarea } from "../models/Tarea.js";
 
 const tareas: Tarea[] = JSON.parse(localStorage.getItem("tareas")!) || [];
 

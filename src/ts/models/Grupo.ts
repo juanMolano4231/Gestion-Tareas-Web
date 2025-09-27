@@ -1,6 +1,6 @@
-import { Tarea } from "./Tarea";
+import { Tarea } from "./Tarea.js";
 
-class Grupo {
+export class Grupo {
 	nombre: string = "Nuevo grupo";
 	tareas: Tarea[] = [];
 
