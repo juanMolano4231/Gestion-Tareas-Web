@@ -1,8 +1,9 @@
+import { Tarea } from "../models/Tarea";
 
 let data: string | null = localStorage.getItem("tareas");
-let tareas: any[] = data ? JSON.parse(data) : [];
+let tareas: Tarea[] = data ? JSON.parse(data) : [];
 
-tareas.forEach((t: any) => {
+tareas.forEach((t: Tarea) => {
 	const h2 = document.createElement("h2");
 	h2.textContent =
 		`Id: ${t.id} | ` +

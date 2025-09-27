@@ -1,6 +1,6 @@
 # Compilar desde root
 
-npx tsc
+npx tsc --watch
 
 # Correr server desde root
 
