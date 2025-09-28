@@ -1,12 +1,8 @@
 import { Tarea } from "../models/Tarea.js";
 import type { EstadoTarea } from "../models/Tarea.js";
+import { TareasController } from "./TareasController.js";
 
-const tareas: Tarea[] = JSON.parse(localStorage.getItem("tareas")!) || [];
-
-function generarId(): number {
-	if (tareas.length === 0) return 1;
-	return Math.max(...tareas.map(t => t.id)) + 1;
-}
+const tareas: Tarea[] = TareasController.getTareas();
 
 (window as any).crear = function () {
 	const titulo = (document.getElementById("titulo") as HTMLInputElement).value;
@@ -14,15 +10,14 @@ function generarId(): number {
 	const estado = (document.getElementById("estado") as HTMLInputElement).value as EstadoTarea;
 
 	const nuevaTarea = new Tarea(
-		generarId(),
+		TareasController.generarId(),
 		titulo,
 		descripcion,
 		estado,
-		new Date().toISOString().split("T")[0]
+		TareasController.todaysDate()
 	);
 
-	tareas.push(nuevaTarea);
-	localStorage.setItem("tareas", JSON.stringify(tareas));
+	TareasController.add(nuevaTarea);
 
 	window.location.href = "ver-tareas.html";
 };

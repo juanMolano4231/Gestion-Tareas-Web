@@ -1,16 +1,16 @@
 import { Tarea } from "../models/Tarea.js";
+import { TareasController } from "./TareasController.js";
 
-let data: string | null = localStorage.getItem("tareas");
-let tareas: Tarea[] = data ? JSON.parse(data) : [];
+let tareas: Tarea[] = TareasController.getTareas();
 
 tareas.forEach((t: Tarea) => {
 	const h2 = document.createElement("h2");
 	h2.textContent =
-		`Id: ${t.id} | ` +
-		`Título: ${t.titulo} | ` +
-		`Descripción: ${t.descripcion} | ` +
-		`Estado: ${t.estado} | ` +
-		`Creación: ${t.fechaCreacion}`;
+		`Id: ${t.getId} | ` +
+		`Título: ${t.getTitulo} | ` +
+		`Descripción: ${t.getDescripcion} | ` +
+		`Estado: ${t.getEstado} | ` +
+		`Creación: ${t.getFechaCreacion}`;
 	
 	h2.style.cursor = "pointer";
 	h2.addEventListener("click", () => {
