@@ -6,13 +6,15 @@ export class Tarea extends BaseModel {
 	private descripcion: string = "Aquí va la descripción de tu nueva tarea";
 	private estado: EstadoTarea = "pendiente";
 	private fechaCreacion: string = "";
+	private grupoId: number = 0;
 
 	constructor(
 		id: number,
 		titulo?: string,
 		descripcion?: string,
 		estado?: EstadoTarea,
-		fechaCreacion?: string
+		fechaCreacion?: string,
+		grupoId?: number
 	) {
 		super(id);
 		this.id = id;
@@ -20,6 +22,7 @@ export class Tarea extends BaseModel {
 		if (descripcion) this.descripcion = descripcion;
 		if (estado) this.estado = estado;
 		if (fechaCreacion) this.fechaCreacion = fechaCreacion;
+		if (grupoId !== undefined) this.grupoId = grupoId; // !== permite que grupo 0 sea valido
 	}
 
 	static fromJSON(data: any): Tarea {
@@ -28,7 +31,8 @@ export class Tarea extends BaseModel {
 			data.titulo,
 			data.descripcion,
 			data.estado,
-			data.fechaCreacion
+			data.fechaCreacion,
+			data.grupoId ?? 0 // ?? significa: si el valor de grupoId en data es indefinido, grupoId sera 0
 		);
 	}
 
@@ -76,6 +80,14 @@ export class Tarea extends BaseModel {
 
 	set setFechaCreacion(fechaCreacion: string) {
 		this.fechaCreacion = fechaCreacion;
+	}
+	
+	get getGrupoId(): number {
+		return this.grupoId;
+	}
+
+	set setGrupoId(grupoId: number) {
+		this.grupoId = grupoId;
 	}
 
 }
