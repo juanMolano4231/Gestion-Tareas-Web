@@ -1,29 +1,32 @@
-import { Tarea } from "./Tarea.js";
+import { BaseModel } from "./BaseModel.js";
 
-export class Grupo {
+export class Grupo extends BaseModel {
 	private nombre: string = "Nuevo grupo";
-	private tareas: Tarea[] = [];
 
-	constructor(nombre?: string, tareas?: Tarea[]) {
+	constructor(id: number, nombre?: string) {
+		super(id);
+		this.id = id;
 		if (nombre) this.nombre = nombre;
-		if (tareas) this.tareas = tareas;
+	}
+
+	static fromJSON(data: any): Grupo {
+		return new Grupo(
+			data.id,
+			data.nombre
+		);
 	}
 
 	// Getters
-	get getNombre(): string {
-		return this.nombre;
+	get getId(): number {
+		return this.id;
 	}
 
-	get getTareas(): Tarea[] {
-		return this.tareas;
+	get getNombre(): string {
+		return this.nombre;
 	}
 
 	// Setters
 	set setNombre(nombre: string) {
 		this.nombre = nombre;
-	}
-
-	set setTareas(tareas: Tarea[]) {
-		this.tareas = tareas;
 	}
 }
