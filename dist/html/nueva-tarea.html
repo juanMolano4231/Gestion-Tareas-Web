@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Gestor de tareas</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+	<h1>Nueva tarea</h1>
+	<a href="index.html">Volver</a><br>
+
+	<input type="text" id="titulo" placeholder="Título">
+	<input type="text" id="descripcion" placeholder="Descripción">
+	<input type="text" id="estado" placeholder="Estado">
+	<input type="text" id="grupoId" placeholder="Id grupo (default: 0)">
+
+	<button onclick="crear()">Crear</button>
+
+	<script type="module" src="../../dist/ts/scripts/nueva-tarea.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang=en>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Gestor de tareas</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<h1>Tarea a editar</h1>
+	<a href="ver-tareas.html">Volver</a><br>
+
+	<input type="text" id="titulo" placeholder="titulo">
+	<input type="text" id="descripcion" placeholder="descripcion">
+	<input type="text" id="estado" placeholder="estado">
+	<input type="text" id="fechaCreacion" placeholder="fechaCreacion">
+	<input type="text" id="grupoId" placeholder="grupo">
+
+
+	<button onclick="editar()">Editar</button>
+
+	<script type="module" src="../../dist/ts/scripts/editar-tarea.js"></script>
+</body>
+
+</html>
