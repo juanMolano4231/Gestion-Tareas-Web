@@ -27,7 +27,7 @@ export class Usuario {
 
 	selfUpdate(usuarios: Usuario[]) {
 		usuarios.forEach((u: Usuario, i: number) => {
-			if (u.getUsername === this.getUsername) {
+			if (u.getEmail === this.getEmail) {
 				usuarios[i] = this;
 			}
 		});
