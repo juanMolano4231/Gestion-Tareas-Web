@@ -10,3 +10,8 @@ npx tsc --watch
 
 // No hace falta volver a correr el comando al hacer cambios al código
 npx http-server . -o /src/html/index.html
+
+# Para subir a pages
+
+Quitar ../../dist de las rutas y dejarlas como /ts/
+Meter ts dentro de html.
