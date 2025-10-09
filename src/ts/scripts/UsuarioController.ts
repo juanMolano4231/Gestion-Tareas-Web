@@ -34,17 +34,6 @@ export class UsuarioController {
         return nuevo;
     }
 
-    // Inicia sesión con usuario y contraseña
-    static login(username: string, contrasena: string): Usuario | null {
-        const usuarios = this.getUsuarios();
-        const usuario = usuarios.find(u => u.getUsername === username && u.getContrasena === contrasena);
-        if (usuario) {
-            this.setUsuarioActual(usuario);
-            return usuario;
-        }
-        return null;
-    }
-
     // Guarda el usuario actualmente logueado
     static setUsuarioActual(usuario: Usuario) {
         localStorage.setItem("usuarioActual", JSON.stringify(usuario));
