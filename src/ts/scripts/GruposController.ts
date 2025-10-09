@@ -3,6 +3,8 @@ import { Tarea } from "../models/Tarea.js";
 import { TareasController } from "./TareasController.js";
 
 export class GruposController {
+
+    // Crea la llave de guardado del usuario actual
     static getStorageKey(): string {
         const usuario = UsuarioController.getUsuarioActual();
         return usuario ? `grupos_${usuario.getEmail}` : "grupos_default";

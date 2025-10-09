@@ -13,6 +13,7 @@ export class UsuarioController {
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
     }
 
+    // Crea el usuario default
     static ensureDefault() {
         let usuarios = this.getUsuarios();
         if (usuarios.length === 0) {

@@ -2,6 +2,8 @@ import { Tarea } from "../models/Tarea.js";
 import { UsuarioController } from "./UsuarioController.js";
 
 export class TareasController {
+
+    // Crea la llave de guardado del usuario actual
     static getStorageKey(): string {
         const usuario = UsuarioController.getUsuarioActual();
         return usuario ? `tareas_${usuario.getEmail}` : "tareas_default";
