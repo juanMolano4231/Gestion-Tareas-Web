@@ -1,10 +1,15 @@
 import { Tarea } from "../models/Tarea.js";
+import { UsuarioController } from "./UsuarioController.js";
 
 export class TareasController {
+    static getStorageKey(): string {
+        const usuario = UsuarioController.getUsuarioActual();
+        return usuario ? `tareas_${usuario.getEmail}` : "tareas_default";
+    }
 
     // Comprueba si existen tareas
     static hasTareas() {
-        return localStorage.getItem("tareas") ? true : false;
+        return localStorage.getItem(this.getStorageKey()) ? true : false;
     }
 
     // Se crean tareas de ejemplo
@@ -20,13 +25,13 @@ export class TareasController {
 
     // Se obtienen todas las tareas
     static getTareas() {
-        let raw = JSON.parse(localStorage.getItem("tareas") || "[]");
+        let raw = JSON.parse(localStorage.getItem(this.getStorageKey()) || "[]");
         return raw.map((t: any) => Tarea.fromJSON(t));
     }
 
     // Se guardan todas las tareas
     static setTareas(tareas: Tarea[]) {
-        localStorage.setItem("tareas", JSON.stringify(tareas));
+        localStorage.setItem(this.getStorageKey(), JSON.stringify(tareas));
     }
 
     // Se genera un id nuevo para una tarea
