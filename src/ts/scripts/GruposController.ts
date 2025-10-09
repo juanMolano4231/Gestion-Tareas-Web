@@ -1,22 +1,29 @@
+import { UsuarioController } from "./UsuarioController.js";
 import { Tarea } from "../models/Tarea.js";
 import { TareasController } from "./TareasController.js";
 
 export class GruposController {
 
+    // Crea la llave de guardado del usuario actual
+    static getStorageKey(): string {
+        const usuario = UsuarioController.getUsuarioActual();
+        return usuario ? `grupos_${usuario.getEmail}` : "grupos_default";
+    }
+
     // Se comprueba si existen grupos en localStorage
     static hasGrupos() {
-        return localStorage.getItem("grupos") ? true : false;
+        return localStorage.getItem(this.getStorageKey()) ? true : false;
     }
 
     // Se obtienen todos los grupos
     static getGrupos() {
-        let raw = JSON.parse(localStorage.getItem("grupos") || "[]");
+        let raw = JSON.parse(localStorage.getItem(this.getStorageKey()) || "[]");
         return raw;
     }
 
     // Se actualiza la lista de grupos
     static setGrupos(grupos: any[]) {
-        localStorage.setItem("grupos", JSON.stringify(grupos));
+        localStorage.setItem(this.getStorageKey(), JSON.stringify(grupos));
     }
 
     // Comprueba la existencia de un grupo por defecto "sin grupo"

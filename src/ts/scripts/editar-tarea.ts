@@ -45,5 +45,5 @@ if (tarea) (document.getElementById("grupoId") as HTMLInputElement).value = tare
 	// Actualiza la lista de tareas con la nueva tarea
 	TareasController.setTareas(tareas);
 
-	window.location.href = "index.html";
+	window.location.href = "ver-tareas.html";
 }
