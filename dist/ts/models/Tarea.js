@@ -1,11 +1,12 @@
 import { BaseModel } from "./BaseModel.js";
 export class Tarea extends BaseModel {
     constructor(id, titulo, descripcion, estado, fechaCreacion, grupoId) {
+        var _a;
         super(id);
         this.titulo = "Nueva tarea";
         this.descripcion = "Aquí va la descripción de tu nueva tarea";
         this.estado = "pendiente";
-        this.fechaCreacion = "";
+        this.fechaCreacion = ((_a = new Date().toISOString().split("T")[0]) !== null && _a !== void 0 ? _a : "");
         this.grupoId = 0;
         this.id = id;
         if (titulo)

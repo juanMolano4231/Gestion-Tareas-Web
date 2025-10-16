@@ -5,7 +5,7 @@ export class Tarea extends BaseModel {
 	private titulo: string = "Nueva tarea";
 	private descripcion: string = "Aquí va la descripción de tu nueva tarea";
 	private estado: EstadoTarea = "pendiente";
-	private fechaCreacion: string = "";
+	private fechaCreacion: string = (new Date().toISOString().split("T")[0] ?? "");
 	private grupoId: number = 0;
 
 	constructor(
