@@ -1,5 +1,15 @@
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 import { Tarea } from "../models/Tarea.js";
 import { UsuarioController } from "./UsuarioController.js";
+import { loadTareasFromAPI } from "./jsonPlaceHolder.js";
 export class TareasController {
     // Crea la llave de guardado del usuario actual
     static getStorageKey() {
@@ -10,14 +20,13 @@ export class TareasController {
     static hasTareas() {
         return localStorage.getItem(this.getStorageKey()) ? true : false;
     }
-    // Se crean tareas de ejemplo
+    // Fetchea tareas de ejemplo
     static createSample() {
-        const ejemplos = [
-            new Tarea(1, "Comprar pan", "Ir a la tienda y comprar pan fresco", "pendiente", "2025-09-11"),
-            new Tarea(2, "Estudiar JS", "Repasar clases y objetos en JavaScript", "en curso", "2025-09-10"),
-            new Tarea(3, "Hacer ejercicio", "Correr 30 minutos en el parque", "completada", "2025-09-09")
-        ];
-        this.setTareas(ejemplos);
+        return __awaiter(this, void 0, void 0, function* () {
+            const todas = yield loadTareasFromAPI();
+            const tres = todas.slice(0, 3);
+            this.setTareas(tres);
+        });
     }
     // Se obtienen todas las tareas
     static getTareas() {
