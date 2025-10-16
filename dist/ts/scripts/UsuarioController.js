@@ -54,7 +54,7 @@ export function exposeUsuarioControllerGlobals() {
         if (usuario) {
             UsuarioController.setUsuarioActual(usuario);
             alert("Login exitoso");
-            window.location.href = "index.html";
+            window.location.href = "main.html";
         }
         else {
             alert("Email o clave incorrectos");

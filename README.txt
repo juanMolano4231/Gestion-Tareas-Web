@@ -9,9 +9,8 @@ npx tsc --watch
 # Correr server desde root
 
 // No hace falta volver a correr el comando al hacer cambios al código
-npx http-server . -o /src/html/index.html
+npx http-server ./dist -o
 
 # Para subir a pages
 
-Quitar ../../dist de las rutas y dejarlas como /ts/
-Meter ts dentro de html.
+build es dist, compilar ts manualmente o en pages.

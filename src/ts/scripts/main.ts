@@ -5,6 +5,7 @@ import { UsuarioController, exposeUsuarioControllerGlobals } from "./UsuarioCont
 // Crea una lista default de tareas si no existe ninguna
 if (!TareasController.hasTareas()) {
 	TareasController.createSample();
+	console.log("AAA");
 }
 
 UsuarioController.ensureDefault();
