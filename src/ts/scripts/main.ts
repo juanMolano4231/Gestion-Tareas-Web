@@ -11,9 +11,3 @@ if (!TareasController.hasTareas()) {
 
 UsuarioController.ensureDefault();
 exposeUsuarioControllerGlobals();
-
-loadTareasFromAPI().then(tareas => {
-	tareas.forEach(t =>
-		console.log(`ID: ${t.getId}, Título: ${t.getTitulo}, Estado: ${t.getEstado}`)
-	);
-});
