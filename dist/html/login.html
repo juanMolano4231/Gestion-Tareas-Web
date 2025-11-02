@@ -1,28 +1,32 @@
-<!DOCTYPE html>
-<html lang=en>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Gestor de tareas</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <content="Edita tu tarea para que refleje más tus objetivos." />
+  <meta name="robots" content="index, follow" />
 </head>
 
 <body>
+  <h1>Iniciar sesión</h1>
+  <input type="text" id="EmailLogin" placeholder="Email" />
+  <input type="password" id="ClaveLogin" placeholder="Clave" />
+  <button onclick="login()">Iniciar sesion</button>
 
-    <h3>Iniciar sesion</h3>
-    <input type="text" id="EmailLogin" placeholder="Email">
-    <input type="password" id="ClaveLogin" placeholder="Clave">
-    <button onclick="login()">Iniciar sesion</button>
+  <h1>Registrarse</h1>
+  <input type="text" id="Username" placeholder="Nombre de usuario" />
+  <input type="text" id="EmailRegistro" placeholder="Email" />
+  <input type="text" id="ClaveRegistro" placeholder="Clave" />
+  <button onclick="registrar()">Registrarse</button>
 
-    <h3>Registrarse</h3>
-    <input type="text" id="Username" placeholder="Nombre de usuario">
-    <input type="text" id="EmailRegistro" placeholder="Email">
-    <input type="text" id="ClaveRegistro" placeholder="Clave">
-    <button onclick="registrar()">Registrarse</button>
+  <script type="module" src="../ts/scripts/main.js"></script>
 
+  <br>
 
-    <script type="module" src="../ts/scripts/main.js"></script>
-
+  <img src="../images/login.png" alt="icono de login con una persona">
+  <img src="../images/security.png" alt="icono de login con una persona">
 </body>
 
 </html>

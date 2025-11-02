@@ -1,28 +1,37 @@
-<!DOCTYPE html>
-<html lang=en>
+<!doctype html>
+<html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Gestor de tareas</title>
-	<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <title>Nueva Tarea</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="Crea una nueva tarea para recordar las cosas más importantes." />
+  <meta name="robots" content="index, follow" />
 </head>
 
 <body>
 
-	<h1>Nueva tarea</h1>
-	<a href="main.html">Volver</a><br>
+  <br>
 
-	<input type="text" id="titulo" placeholder="Título">
-	<input type="text" id="descripcion" placeholder="Descripción">
-	<input type="text" id="estado" placeholder="Estado">
-	<input type="text" id="grupoId" placeholder="Id grupo (default: 0)">
+  <img src="../images/checklist.png" alt="Una lista de tareas con un lapiz al lado">
 
-	<button onclick="crear()">Crear</button>
+  <img src="../images/to-do-list.jpg" alt="Una lista de tareas con un lapiz al lado">
 
-	<script type="module" src="../ts/scripts/nueva-tarea.js"></script>
+  <br>
 
-	<script type="module" src="../ts/scripts/chat.js"></script>
+  <h1>Nueva tarea</h1>
+  <a href="main.html">Volver</a><br />
 
+  <input type="text" id="titulo" placeholder="Título" />
+  <input type="text" id="descripcion" placeholder="Descripción" />
+  <input type="text" id="estado" placeholder="Estado" />
+  <input type="text" id="grupoId" placeholder="Id grupo (default: 0)" />
+
+  <button onclick="crear()">Crear</button>
+
+  <script type="module" src="../ts/scripts/nueva-tarea.js"></script>
+
+  <script type="module" src="../ts/scripts/chat.js"></script>
 </body>
 
 </html>

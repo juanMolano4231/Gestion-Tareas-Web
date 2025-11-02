@@ -1,23 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html lang=en>
+<html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Gestor de tareas</title>
-	<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <title>Crear Grupo</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="Crea un grupo para guardar tus tareas." />
+  <meta name="robots" content="index, follow" />
 </head>
 
 <body>
-	<h1>Crear nuevo grupo</h1>
-	<a href="ver-tareas.html">Volver</a><br>
 
-	<input type="text" id="nombre" placeholder="Nombre del grupo">
+  <br>
 
-	<button onclick="crearGrupo()">Crear grupo</button>
+  <img src="../images/goal.jpg"
+    alt="Una persona sobre unas letras gigantes que dicen GOAL mirando al horizonte con un catalejo">
 
-	<script type="module" src="../ts/scripts/crear-grupo.js"></script>
-	<script type="module" src="../ts/scripts/chat.js"></script>
+  <img src="../images/goal2.jpg" alt="Unas personitas cargando entre todas la palabra GOAL">
+
+  <br>
+
+  <h1>Crear nuevo grupo</h1>
+  <a href="ver-tareas.html">Volver</a><br />
+
+  <input type="text" id="nombre" placeholder="Nombre del grupo" />
+
+  <button onclick="crearGrupo()">Crear grupo</button>
+
+  <script type="module" src="../ts/scripts/crear-grupo.js"></script>
+  <script type="module" src="../ts/scripts/chat.js"></script>
 </body>
 
 </html>

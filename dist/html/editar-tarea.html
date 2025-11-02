@@ -1,28 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html lang=en>
+<html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Gestor de tareas</title>
-	<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <title>Editar Tarea</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="Edita tu tarea para que refleje más tus objetivos." />
+  <meta name="robots" content="index, follow" />
 </head>
 
 <body>
-	<h1>Tarea a editar</h1>
-	<a href="ver-tareas.html">Volver</a><br>
 
-	<input type="text" id="titulo" placeholder="titulo">
-	<input type="text" id="descripcion" placeholder="descripcion">
-	<input type="text" id="estado" placeholder="estado">
-	<input type="text" id="fechaCreacion" placeholder="fechaCreacion">
-	<input type="text" id="grupoId" placeholder="grupo">
+  <br>
 
+  <img src="../images/accomplishment.jpg"
+    alt="Una persona sobre unas letras gigantes que dicen GOAL mirando al horizonte con un catalejo">
 
-	<button onclick="editar()">Editar</button>
+  <img src="../images/archievement.jpg" alt="Un hombre subiendo unas escaleras hacia un trofeo">
 
-	<script type="module" src="../ts/scripts/editar-tarea.js"></script>
-	<script type="module" src="../ts/scripts/chat.js"></script>
+  <br>
+
+  <h1>Tarea a editar</h1>
+  <a href="ver-tareas.html">Volver</a><br />
+
+  <input type="text" id="titulo" placeholder="titulo" />
+  <input type="text" id="descripcion" placeholder="descripcion" />
+  <input type="text" id="estado" placeholder="estado" />
+  <input type="text" id="fechaCreacion" placeholder="fechaCreacion" />
+  <input type="text" id="grupoId" placeholder="grupo" />
+
+  <button onclick="editar()">Editar</button>
+
+  <script type="module" src="../ts/scripts/editar-tarea.js"></script>
+  <script type="module" src="../ts/scripts/chat.js"></script>
 </body>
 
 </html>
